@@ -1,15 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
+import contatosReducer from './reducers/contatos'
 
-import tarefasReducer from './reducers/tarefas'
-import filtroReducer from './reducers/filtro'
-
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    tarefas: tarefasReducer,
-    filtro: filtroReducer
+    contatos: contatosReducer
   }
 })
 
 export type RootReducer = ReturnType<typeof store.getState>
 
-export default store
+export type AppDispatch = typeof store.dispatch
